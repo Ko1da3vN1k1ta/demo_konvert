@@ -33,7 +33,7 @@ private void initialize(){
             double rubles = Integer.parseInt(rubleField.getText());
             String selectValue = currencyField.getValue();
             Random random = new Random();
-            double exchangeRate = random.nextDouble() * (3 - 0.1) + 0.1;
+            double exchangeRate = random.nextDouble(0.1,3) * rubles;
 
 
             switch (selectValue) {
@@ -59,7 +59,7 @@ private void initialize(){
             }
 
         } catch (Exception e) {
-            currencyFinalField.setText("Некорректный ввод. Пожалуйста, введите числовое значение.");
+            currencyFinalField.setText("Некорректный ввод.");
         }
     }
 }
